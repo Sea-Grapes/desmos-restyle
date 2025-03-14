@@ -21,6 +21,7 @@ style.innerHTML = `
   gap: 1em;
   padding-right: 1em;
   align-items: center;
+  color: #555;
 
   input[type='checkbox'] {
     /* display: none; */
