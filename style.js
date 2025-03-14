@@ -110,7 +110,9 @@ html[restyle-active] {
 }
 `
 document.head.append(style)
-document.documentElement.setAttribute('restyle-active', '')
+
+const html = document.documentElement
+html.setAttribute('restyle-active', '')
 
 
 function build(parent, type, call) {
@@ -126,14 +128,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const header = document.querySelector('.dcg-header-right-content')
 
-const toggle = document.createElement('label')
-toggle.id = 'restyle'
-header.prepend(toggle)
+const menuItem = document.createElement('label')
+menuItem.id = 'restyle'
+header.prepend(menuItem)
 
-toggle.innerHTML = `
+menuItem.innerHTML = `
 <input type='checkbox'>
 <div class='toggle'></div>
 <span>Restyle</span>
 `.trim()
 
+
+const toggle = document.querySelector('#restyle > input')
+let checked = localStorage.getItem('restyleActive') || true
+toggle.checked = checked
+toggle.addEventListener('change', e => {
+  checked = !checked
+  if (!checked) html.removeAttribute('restyle-active')
+  else html.setAttribute('restyle-active', '')
+  localStorage.setItem('restyleActive', checked)
 })
+
+})
+
