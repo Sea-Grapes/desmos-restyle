@@ -18,8 +18,8 @@ style.innerHTML = `
 #restyle {
 
   display: inline-flex;
-  gap: 1em;
-  padding-right: 1em;
+  gap: 0.825em;
+  padding-right: 1.5em;
   align-items: center;
   color: #555;
 
@@ -52,7 +52,7 @@ style.innerHTML = `
   }
 
 
-  :focus-within + .toggle {
+  :focus-within + .toggle, input:active + .toggle {
     box-shadow: 0 0 0 2px #93c5fd;
   }
 
