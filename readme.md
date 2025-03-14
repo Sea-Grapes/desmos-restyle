@@ -5,6 +5,6 @@ A simple userscript to make the Desmos scientific calculator wider than usual. I
 ![img](img/img1.png)
 
 
-# Installation
+## Installation
 
 If you want to use the userscript version, install [tampermonkey](https://www.tampermonkey.net/) or something similar, then copy the script into a new page.
